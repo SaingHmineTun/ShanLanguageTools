@@ -31,7 +31,7 @@ public final class TaiNueaSyllableBreaker {
         // Normalize spaces
         result = result.replaceAll("( )+", " ");
         result = result.concat("\u0020");
-        return result.strip();
+        return result.trim();
     }
 
     private static boolean continueConverting(String[] tests) {

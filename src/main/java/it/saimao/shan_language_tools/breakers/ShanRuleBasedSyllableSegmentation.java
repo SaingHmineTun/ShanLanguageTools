@@ -6,7 +6,6 @@ public final class ShanRuleBasedSyllableSegmentation {
     private static final String CONSONANT_COMBO = "မၼငပတၵၺဝ";
     private static final String CONSONANTS = "\u1075-\u1081\u1004\u101e\u1010\u1011\u1015\u1019\u101a\u101b\u101c\u101d\u1022";
 
-
     private static final String V1 = "\u1083\u102E\u1084"; // ဢႃ၊ ဢီ၊ ဢႄ vowels
     private static final String V2 = "\u1030";             // ဢူ
     private static final String V3 = "\u1031";             // ေ
@@ -61,7 +60,7 @@ public final class ShanRuleBasedSyllableSegmentation {
             output = output.replaceAll(rule[0], rule[1]);
         }
 
-        return output.strip();
+        return output.trim();
     }
 
     public static String[] segmentAsArray(String input) {

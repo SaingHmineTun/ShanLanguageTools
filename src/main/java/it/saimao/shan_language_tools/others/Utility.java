@@ -66,7 +66,7 @@ public final class Utility {
             "ႇ", "ႈ", "း", "ႉ", "ႊ"
     };
 
-    private static List<String> steps = Stream.of(VOWELS, ME_KAP_SON_15, TO_PHYAT_MA, TO_PHYAT_NA, TO_PHYAT_NGA, TO_PHYAT_PA, TO_PHYAT_TA, TO_PHYAT_KA).flatMap(Stream::of).toList();
+    private static List<String> steps = Stream.of(VOWELS, ME_KAP_SON_15, TO_PHYAT_MA, TO_PHYAT_NA, TO_PHYAT_NGA, TO_PHYAT_PA, TO_PHYAT_TA, TO_PHYAT_KA).flatMap(Stream::of).collect(Collectors.toList());
 
     public static void getEveryPossibleShanWordThatWeCanWriteDown() {
 
@@ -184,7 +184,7 @@ public final class Utility {
 
     public static String convertShanToEngNumberAsString(String shanNumber) {
         StringBuilder output = new StringBuilder();
-        for (char ch: shanNumber.toCharArray()) {
+        for (char ch : shanNumber.toCharArray()) {
             output.append(ch - '႐');
         }
         return output.toString();
@@ -196,18 +196,18 @@ public final class Utility {
     }
 
     public static boolean isShanNumber(String param) {
-        var numbers = param.split("");
-        for (var num : numbers) {
-            if (List.of(NUMBERS).contains(num)) continue;
+        String[] numbers = param.split("");
+        for (String num : numbers) {
+            if (Arrays.asList(NUMBERS).contains(num)) continue;
             return false;
         }
         return true;
     }
 
     public static boolean isShanConsonant(String param) {
-        var text = param.split("");
-        for (var txt : text) {
-            if (List.of(CONSONANTS).contains(txt)) continue;
+        String[] text = param.split("");
+        for (String txt : text) {
+            if (Arrays.asList(CONSONANTS).contains(txt)) continue;
             return false;
         }
         return true;
@@ -230,9 +230,9 @@ public final class Utility {
     }
 
     public static Map<String, Queue<Integer>> getShanWordsIndex(String input) {
-        var map = new HashMap<String, Queue<Integer>>();
+        HashMap<String, Queue<Integer>> map = new HashMap<String, Queue<Integer>>();
 
-        var syl = ShanRuleBasedSyllableSegmentation.segmentAsArray(input);
+        String[] syl = ShanRuleBasedSyllableSegmentation.segmentAsArray(input);
         for (int i = 0; i < syl.length; i++) {
             if (!map.containsKey(syl[i])) {
                 map.put(syl[i], new LinkedList<>());
@@ -243,7 +243,7 @@ public final class Utility {
     }
 
     public static String shuffleWord(String word) {
-        List<String> syllables = new ArrayList<>(List.of(ShanRuleBasedSyllableSegmentation.segmentAsArray(word)));
+        List<String> syllables = new ArrayList<>(Arrays.asList(ShanRuleBasedSyllableSegmentation.segmentAsArray(word)));
         Collections.shuffle(syllables);
         return String.join("", syllables);
     }

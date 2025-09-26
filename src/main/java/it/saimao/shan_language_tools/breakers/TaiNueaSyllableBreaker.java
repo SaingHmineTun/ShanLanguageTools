@@ -52,10 +52,12 @@ public final class TaiNueaSyllableBreaker {
                         }
                     }
                     if (consonant_count >= 3 || vowel_count >= 2) {
+                        System.out.println("consonant_count >= 3 || vowel_count >= 2" + str);
                         return true;
                     }
                 }
                 if (str.length() > 4) {
+                    System.out.println("str.length() > 4 " + str);
                     return true;
                 }
             }

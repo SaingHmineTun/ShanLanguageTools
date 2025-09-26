@@ -10,8 +10,9 @@ public final class TaiLeSyllableSegmentation {
     // "!-/:-@[-`{-~\s"
     private static final String OTHER_CHAR = "\u1040-\u1049\u104a\u104b!-/:-@\\[-`\\{-~\\s";
     private static final String TONE_MARKS = "\u1970-\u1974";
+    private static final String MEDIANS = "\u1963-\u196D";
 
-    private static final String BREAK_PATTERN = "([" + CONSONANTS + "](?![" + TONE_MARKS + "])|[" + ENG_CHAR + OTHER_CHAR + "])";
+    private static final String BREAK_PATTERN = "([" + CONSONANTS + "][" + MEDIANS + "](?![" + TONE_MARKS + "])|[" + ENG_CHAR + OTHER_CHAR + "])";
     public static synchronized String[] segment(String text) {
         if (text == null) {
             throw new NullPointerException();
@@ -24,9 +25,9 @@ public final class TaiLeSyllableSegmentation {
         String segmentString = Arrays.stream(outputs)
                 .map(s -> s.concat(delimiter))
                 .collect(Collectors.joining())
-                // In Tai Le, There's no single consonant standing
-                .replaceAll("(" + delimiter + ")([" + CONSONANTS + "])(" + delimiter + ")", "$2$3")
-                .replaceAll("(" + delimiter + ")+", "$1");
+                .replaceAll("([" + TONE_MARKS + "])", "$1 ")
+                .replaceAll("( )+", " ")
+                ;
         return segmentString.trim();
     }
 

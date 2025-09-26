@@ -15,6 +15,7 @@ public final class TaiNueaSyllableBreaker {
 
         String[] arrs;
         boolean con;
+        int times = 0;
         do {
             result = tm3wordbreaks(result);
             result = checkWordbreak(result);
@@ -22,7 +23,8 @@ public final class TaiNueaSyllableBreaker {
             result = checkWordbreak(result);
             arrs = result.split("\\u0020");
             con = continueConverting(arrs);
-        } while (con);
+            times++;
+        } while (con && times < 100);
         result = result.replaceAll("(\\u0020)([\\u104b\\u104a\\u002e\\u002c\\u0029\\u005d\\u007d\\u003e\\u003f\\u0021\\u003a\\u003b\\u0022\\u0027\\u002a\\u005e])", "$2");
         result = result.replaceAll("([\\u0028\\u005b\\u007b\\u003c])(\\u0020)", "$1");
 

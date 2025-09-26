@@ -42,5 +42,11 @@ public class TaiNueaSyllableBreakerTest {
         Assert.assertEquals(expected, output);
     }
 
+    @Test
+    public void test_segment4() {
+        String input = "Input : ᥝᥢᥰᥑᥫᥰᥖᥭᥰ ᥟᥛᥱᥢᥢᥴ ᥝᥢᥰᥛᥫᥒᥰᥖᥭᥰ ᥟᥛᥱᥢᥢᥴ ᥝᥢᥰᥓᥫᥳᥓᥣᥖᥲᥓᥪᥒᥲᥖᥭᥰ ᥢᥭᥳ ᥖᥤᥲᥖᥥᥳᥛᥢᥰ ᥙᥥᥢᥴᥝᥢᥰᥛᥫᥲᥖᥩᥒᥰᥛᥣᥭᥴᥘᥩᥒᥲᥝᥢᥰᥗᥤᥲᥓᥥᥖᥰ၊ ᥘᥫᥢᥴᥗᥨᥢᥲᥔᥩᥒᥴ(ᥜᥦᥙᥱᥙᥣᥱရᥤᥱ) ᥙᥤ 1947 ᥢᥤᥲ ᥖᥤᥲᥝᥥᥒᥰᥙᥣᥒᥴᥘᥨᥒᥴ ᥓᥪᥒᥲᥖᥭᥰᥙᥩᥖᥰᥓᥣᥢᥰ၊ ᥟᥢᥴᥚᥧᥲᥖᥣᥒᥴᥖᥨᥝᥴᥓᥧᥛᥰᥖᥭᥰ၊ ᥑᥣᥒᥴ၊ ᥠᥣᥒᥰ ᥓᥫᥰᥙᥥᥢᥴᥓᥣᥝᥰᥑᥫᥰ ᥖᥦᥰᥞᥨᥖᥲᥔᥢᥴᥘᥩᥭᥴᥑᥝᥴ ᥘᥭᥲᥘᥨᥒᥰᥘᥣᥭᥰᥛᥪᥰᥚᥩᥛᥳᥓᥬᥴᥐᥢᥴ ᥖᥣᥱᥞᥨᥛᥲᥞᥩᥛᥰᥟᥢᥴᥘᥩᥖᥲᥘᥦᥝᥰᥔᥝᥰᥑᥩᥲᥖᥤᥲᥑᥧᥢᥴᥟᥤᥒᥰᥐᥘᥥᥖᥲᥑᥝᥴ ᥢᥢᥳᥕᥝᥳ။";
+        System.out.println(TaiNueaSyllableBreaker.syllable_break(input));
+    }
+
 
 }

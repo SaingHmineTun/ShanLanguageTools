@@ -1,24 +1,85 @@
 # ShanConverters
 
-# This repo will have all the converters and syllable word breakers that I have been working on.
+This repository contains various converters and syllable word breakers that I have developed.
 
-### They are all written in Java and you are welcomed to contribute it with other languages.
+## Overview
 
-      There are 4 converters developed by me.
-1) **_ShanTranslit_**
-2) **_ShanZawgyiConverter_**
-3) **_TaiNueaConverter_**
-4) **_ShanAyingConverter_**
+All tools are written in Java, and contributions in other languages are welcome.
 
+### Converters (4)
+1. **ShanTranslit**
+2. **ShanZawgyiConverter**
+3. **TaiNueaConverter**
+4. **ShanAyingConverter**
 
-    There are 2 syllable word breakers developed by me.
-1) **_Shan Syllable Word Breaker_**
-2) **_Tai Nuea Syllable Word Breaker_**
+### Syllable Word Breakers (2)
+1. **Shan Syllable Word Breaker**
+2. **Tai Nuea Syllable Word Breaker**
 
-How to use?
-You can get this project in 3 ways 
+## Installation
 
-#### Downloading the jar from [Releases](https://github.com/saimao/ShanLanguageTools/releases)
+You can integrate this project into your workflow in two ways:
 
-After downloading, include it in your project
+### Option 1: Download JAR from Releases
+1. Visit the [Releases](https://github.com/saimao/ShanLanguageTools/releases) page
+2. Download the latest version
+3. Include the JAR file in your project
 
+### Option 2: Install via JitPack (Recommended)
+
+#### Step 1: Add JitPack Repository
+
+**Gradle (Groovy)**
+```groovy
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositories {
+        mavenCentral()
+        maven { url 'https://www.jitpack.io' }
+    }
+}
+```
+
+**Gradle (Kotlin DSL)**
+```kotlin
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositories {
+        mavenCentral()
+        maven { url = uri("https://www.jitpack.io") }
+    }
+}
+```
+
+**Maven**
+```xml<repositories>
+    <repository>
+        <id>jitpack.io</id>
+        <url>https://www.jitpack.io</url>
+    </repository>
+</repositories>
+```
+
+#### Step 2: Add Dependency
+
+**Gradle (Groovy)**
+```groovy
+dependencies {
+    implementation'com.github.SaingHmineTun:ShanLanguageTools:1.0.1'
+}
+```
+
+**Gradle (Kotlin DSL)**
+```kotlin
+dependencies {
+    implementation("com.github.SaingHmineTun:ShanLanguageTools:1.0.1")
+}
+```
+
+**Maven**
+```xml
+<dependency>
+    <groupId>com.github.SaingHmineTun</groupId>
+    <artifactId>ShanLanguageTools</artifactId>
+    <version>1.0.1</version>
+</dependency>

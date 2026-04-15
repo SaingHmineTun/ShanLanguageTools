@@ -28,6 +28,7 @@ You can integrate this project into your workflow in two ways:
 ### Option 2: Install via JitPack (Recommended)
 
 #### Step 1: Add JitPack Repository
+Firstly, go to the setttings.gradle and add the jitpack repository there!
 
 **Gradle (Groovy)**
 ```groovy
